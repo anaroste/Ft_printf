@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/07 16:17:20 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/10 16:52:21 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/12 14:53:09 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_stock		ft_init_struct(void)
 
 	i = -1;
 	stock.i = 0;
-	while (++i < 13)
+	while (++i < 8)
 		stock.opt[i++] = 0;
 	return (stock);
 }

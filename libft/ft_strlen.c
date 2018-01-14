@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   massetest_printf.c                                 :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/06 18:13:08 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 12:28:09 by anaroste         ###   ########.fr       */
+/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/12 09:43:45 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int		main()
+size_t	ft_strlen(const char *s)
 {
-	int		i = 42;
-	printf("%--4d", i);
-	return 0;
+	size_t		i;
+	size_t		count;
+
+	i = 0;
+	count = 0;
+	while (s[i++] != '\0')
+		count++;
+	return (count);
 }

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   massetest_printf.c                                 :+:      :+:    :+:   */
+/*   ft_handler2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/06 18:13:08 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 12:28:09 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/13 17:31:03 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/14 09:31:36 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int		main()
+void	ft_handler_type(char *format, t_stock *stock, int *i)
 {
-	int		i = 42;
-	printf("%--4d", i);
-	return 0;
+	
 }

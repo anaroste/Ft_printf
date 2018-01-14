@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   massetest_printf.c                                 :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/06 18:13:08 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 12:28:09 by anaroste         ###   ########.fr       */
+/*   Created: 2017/11/08 13:09:51 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/12 09:42:32 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int		main()
+void	ft_putstr(char const *s)
 {
-	int		i = 42;
-	printf("%--4d", i);
-	return 0;
+	int		i;
+
+	i = -1;
+	while (s[++i])
+		ft_putchar(s[i]);
 }
