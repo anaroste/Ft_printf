@@ -6,11 +6,11 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/08 13:06:22 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 09:37:49 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:28:20 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 void	ft_putnbr(int n)
 {

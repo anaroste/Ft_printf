@@ -6,11 +6,11 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/09 13:26:25 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 09:42:56 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:29:12 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

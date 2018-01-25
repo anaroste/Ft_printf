@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_handler2.c                                      :+:      :+:    :+:   */
+/*   ft_convert_mu.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/13 17:31:03 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/14 09:31:36 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/23 18:36:12 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:43:45 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/libprintf.h"
 
-void	ft_handler_type(char *format, t_stock *stock, int *i)
+void		ft_convert_mu(t_stock *stock, va_list ap)
 {
-	
+	stock->type = 'u';
+	stock->opt[7] = 3;
+	ft_convert_oux(stock, ap);
 }

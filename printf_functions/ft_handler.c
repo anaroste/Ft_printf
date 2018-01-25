@@ -6,11 +6,11 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 10:16:38 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/14 15:05:50 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:47:01 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/libprintf.h"
 
 void	ft_handler_flag(char *format, t_stock *stock, int *i)
 {

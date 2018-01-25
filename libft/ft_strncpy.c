@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test_wm.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/10 17:22:05 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/10 17:50:39 by anaroste         ###   ########.fr       */
+/*   Created: 2017/11/08 17:40:40 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:30:15 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-int main(int argc, const char *argv[])
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	if (strchr(argv[1], '%') == NULL)
+	size_t		i;
+
+	i = 0;
+	while (src[i] && (i < len))
 	{
-		write (1, argv[1], strlen(argv[1]));
-		argc = strlen(argv[1]);
+		dst[i] = src[i];
+		i++;
 	}
-	printf("\nret = %d\n", argc);
-	return 0;
+	while (i < len)
+		dst[i++] = '\0';
+	return (dst);
 }

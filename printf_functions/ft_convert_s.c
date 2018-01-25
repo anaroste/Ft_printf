@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_convert_s.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:29:44 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/24 10:29:27 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:45:11 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libprintf.h"
 
-size_t	ft_strlen(const char *s)
+void		ft_convert_s(t_stock *stock, va_list ap)
 {
-	size_t		i;
-	size_t		count;
-
-	i = 0;
-	count = 0;
-	while (s[i++] != '\0')
-		count++;
-	return (count);
+	if (stock->opt[7] != 0)
+		ft_convert_ms(stock, ap);
+	stock->str = va_arg(ap, char *);
+	stock->opt[1] = 0;
+	ft_cut_precision(stock);
+	ft_add_lenght(stock);
 }

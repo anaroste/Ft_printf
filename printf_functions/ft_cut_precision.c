@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   massetest_printf.c                                 :+:      :+:    :+:   */
+/*   ft_cut_precision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/06 18:13:08 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/12 12:28:09 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/25 14:08:30 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:46:38 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../header/libprintf.h"
 
-int		main()
+void	ft_cut_precision(t_stock *stock)
 {
-	int		i = 42;
-	printf("%--4d", i);
-	return 0;
+	char	*tmp;
+
+	if (stock->opt[6] < (int)ft_strlen(stock->str))
+	{
+		tmp = (char *)malloc(sizeof(char) * (stock->opt[6] + 1));
+		tmp = ft_strncpy(tmp, stock->str, stock->opt[6]);
+		tmp[stock->opt[6] + 1] = '\0';
+		stock->str = tmp;
+	}
 }

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_convert_ms.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:29:44 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/25 15:24:29 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:43:20 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libprintf.h"
 
-size_t	ft_strlen(const char *s)
+void		ft_convert_ms(t_stock *stock, va_list ap)
 {
-	size_t		i;
-	size_t		count;
 
-	i = 0;
-	count = 0;
-	while (s[i++] != '\0')
-		count++;
-	return (count);
 }

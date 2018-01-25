@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_convert_md.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:29:44 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/23 18:36:12 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:42:56 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libprintf.h"
 
-size_t	ft_strlen(const char *s)
+void		ft_convert_md(t_stock *stock, va_list ap)
 {
-	size_t		i;
-	size_t		count;
-
-	i = 0;
-	count = 0;
-	while (s[i++] != '\0')
-		count++;
-	return (count);
+	stock->type = 'd';
+	stock->opt[7] = 3;
+	ft_convert_di(stock, ap);
 }

@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   global.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:29:44 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/25 16:22:19 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 16:23:40 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef GLOBAL_H
+# define GLOBAL_H
 
-size_t	ft_strlen(const char *s)
-{
-	size_t		i;
-	size_t		count;
+int		g_ret = 0;
 
-	i = 0;
-	count = 0;
-	while (s[i++] != '\0')
-		count++;
-	return (count);
-}
+#endif

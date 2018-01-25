@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_struct.c                                   :+:      :+:    :+:   */
+/*   ft_add_sign.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/12 14:53:39 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/14 09:34:16 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/22 16:54:22 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:39:06 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/libprintf.h"
 
-t_stock		ft_init_struct(void)
+void	ft_add_sign(t_stock *stock)
 {
-	int			i;
-	t_stock		stock;
+	char	*str;
 
-	i = -1;
-	stock.type = 0;
-	while (++i < 9)
-		stock.opt[i++] = 0;
-	return (stock);
+	str = (char *)malloc(sizeof(char) * 2);
+	str[0] = '+';
+	str[1] = '\0';
+	stock->str = ft_strcat(str, stock->str);
+	free(str);
 }

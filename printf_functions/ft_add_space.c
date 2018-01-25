@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_add_space.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/08 13:16:37 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:29:44 by anaroste         ###   ########.fr       */
+/*   Created: 2018/01/22 16:54:22 by anaroste          #+#    #+#             */
+/*   Updated: 2018/01/25 17:39:38 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../header/libprintf.h"
 
-size_t	ft_strlen(const char *s)
+void	ft_add_space(t_stock *stock)
 {
-	size_t		i;
-	size_t		count;
+	char	*str;
 
-	i = 0;
-	count = 0;
-	while (s[i++] != '\0')
-		count++;
-	return (count);
+	str = (char *)malloc(sizeof(char) * 2);
+	str[0] = ' ';
+	str[1] = '\0';
+	stock->str = ft_strcat(str, stock->str);
+	free(str);
 }

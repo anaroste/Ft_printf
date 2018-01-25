@@ -1,45 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_1101.c                                   :+:      :+:    :+:   */
+/*   ft_printf.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/14 15:05:47 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/25 17:47:49 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../header/libprintf.h"
+#include "../header/global.h"
 
-int		g_ret = 0;
-
-void		(ptr_function(t_stock *stock, va_list ap))
+void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
 {
-	void	(*tbl_function[15])(t_stock *stock, va_list ap);
-
-	ft_set_up[0] = &ft_convert_i;
-	ft_set_up[1] = &ft_convert_i;
-//	ft_set_up[2] = &ft_convert_o;
-//	ft_set_up[3] = &ft_convert_u;
-//	ft_set_up[4] = &ft_convert_x;
-//	ft_set_up[5] = &ft_convert_x;
-//	ft_set_up[6] = &ft_convert_D;
-//	ft_set_up[7] = &ft_convert_O;
-//	ft_set_up[8] = &ft_convert_U;
-//	ft_set_up[9] = &ft_convert_c;
-//	ft_set_up[10] = &ft_convert_s;
-//	ft_set_up[11] = &ft_convert_C;
-//	ft_set_up[12] = &ft_convert_S;
-//	ft_set_up[13] = &ft_convert_p;
-	ft_set_up[14] = &ft_convert_mod;
-	ft_set_up[15] = NULL;
+	(*ft_set_up)[0] = &ft_convert_di;
+	(*ft_set_up)[1] = &ft_convert_di;
+	(*ft_set_up)[2] = &ft_convert_oux;
+	(*ft_set_up)[3] = &ft_convert_oux;
+	(*ft_set_up)[4] = &ft_convert_oux;
+	(*ft_set_up)[5] = &ft_convert_oux;
+	(*ft_set_up)[6] = &ft_convert_md;
+	(*ft_set_up)[7] = &ft_convert_mo;
+	(*ft_set_up)[8] = &ft_convert_mu;
+	(*ft_set_up)[9] = &ft_convert_c;
+	(*ft_set_up)[10] = &ft_convert_s;
+	(*ft_set_up)[11] = &ft_convert_mc;
+	(*ft_set_up)[12] = &ft_convert_ms;
+	(*ft_set_up)[13] = &ft_convert_p;
+	(*ft_set_up)[14] = &ft_convert_mod;
 }
 
 static void		ft_handler_arg(char *format, va_list ap, int *i)
 {
 	t_stock		stock;
+	char		*str;
+	int			j;
+	void		(*ft_set_up[15])(t_stock*, va_list);
 
+	str = "diouxXDOUcsCSp";
+	ft_ptr_function(&ft_set_up);
 	stock = ft_init_struct();
 	ft_handler_flag(format, &stock, i);
 	ft_handler_lenght(format, &stock, i);
@@ -48,8 +49,11 @@ static void		ft_handler_arg(char *format, va_list ap, int *i)
 	ft_handler_modifier2(format, &stock, i);
 	stock.type = format[*i];
 	*i = *i + 1;
-	//ft_set_function();
-	
+	while (stock.type != str[j])
+		j++;
+	ft_set_up[j](&stock, ap);
+	g_ret += (int)ft_strlen(stock.str);
+	ft_putstr(stock.str);
 }
 
 static void		ft_printf_second(char *format, va_list ap, int *i)
@@ -92,6 +96,6 @@ int			ft_printf(const char *format, ...)
 
 int main(int argc, const char *argv[])
 {
-	argc = ft_printf(argv[1]);
+	ft_printf("qwertyuio");
 	return 0;
 }
