@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:47:49 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/01/25 18:05:53 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,9 +93,9 @@ int			ft_printf(const char *format, ...)
 	va_end(ap);
 	return (g_ret);
 }
-
+/*
 int main(int argc, const char *argv[])
 {
 	ft_printf("qwertyuio");
 	return 0;
-}
+}*/
