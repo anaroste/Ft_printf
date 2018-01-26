@@ -62,17 +62,3 @@ void			ft_add_lenght(t_stock *stock)
 		free(str);
 	}
 }
-
-int		main()
-{
-	t_stock stock;
-
-	stock = ft_init_struct();
-	stock.opt[5] = 10;
-	stock.opt[1] = 0;
-	stock.opt[2] = 1;
-	stock.str = "42";
-	ft_add_lenght(&stock);
-	printf("%s\n", stock.str);
-	return 0;
-}
