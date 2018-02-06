@@ -28,7 +28,7 @@ char		*ft_strncpy(char *dst, const char *src, size_t len);
 char		*ft_itoa(int n);
 char		*ft_llong_itoa(long long n);
 char		*ft_ullong_itoa(unsigned long long nbr, int base);
-char		*ft_custom_itoa(unsigned long long nbr, int base, char c);
+char		*ft_custom_itoa_base(unsigned long long nbr, int base, char c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlen_c(const char *s, char c);
 
