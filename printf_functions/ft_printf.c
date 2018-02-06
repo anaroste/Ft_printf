@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                   :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -22,14 +22,14 @@ void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
 	(*ft_set_up)[4] = &ft_convert_oux;
 	(*ft_set_up)[5] = &ft_convert_oux;
 	(*ft_set_up)[6] = &ft_convert_md;
-	(*ft_set_up)[7] = &ft_convert_mo;
+	(*ft_set_up)[7] = &ft_convert_di; /*||||*/
 	(*ft_set_up)[8] = &ft_convert_mu;
 	(*ft_set_up)[9] = &ft_convert_c;
 	(*ft_set_up)[10] = &ft_convert_s;
 	(*ft_set_up)[11] = &ft_convert_mc;
 	(*ft_set_up)[12] = &ft_convert_ms;
 	(*ft_set_up)[13] = &ft_convert_p;
-	(*ft_set_up)[14] = &ft_convert_mod;
+	(*ft_set_up)[14] = &ft_convert_di; /*||||*/
 }
 
 static void		ft_handler_arg(char *format, va_list ap, int *i)
