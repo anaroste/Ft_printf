@@ -26,6 +26,7 @@ PRINTF_SRC_NAME = ft_add_lenght.c	\
 				ft_convert_di.c		\
 				ft_convert_md.c		\
 				ft_convert_ms.c		\
+				ft_convert_mc.c		\
 				ft_convert_mu.c		\
 				ft_convert_o.c		\
 				ft_convert_oux.c	\
