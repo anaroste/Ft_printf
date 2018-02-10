@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 18:05:53 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/10 16:53:56 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ static void		ft_handler_arg(char *format, va_list ap, int *i)
 	ft_set_up[j](&stock, ap);
 	g_ret += (int)ft_strlen(stock.str);
 	ft_putstr(stock.str);
+//	if (stock.str)
+//		free(stock.str);
 }
 
 static void		ft_printf_second(char *format, va_list ap, int *i)
