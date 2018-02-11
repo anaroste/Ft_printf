@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/01/25 17:50:56 by anaroste         ###   ########.fr        #
+#    Updated: 2018/02/11 11:02:14 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = gcc
 
 NAME = libftprintf
 
-FLAGS = 
+FLAGS = -Wall -Werror -Wextra
 
 PRINTF_SRC_NAME = ft_add_lenght.c	\
 				ft_add_precision.c	\
