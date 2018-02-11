@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 15:24:29 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:43:20 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/11 10:45:21 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void		ft_convert_ms(t_stock *stock, va_list ap)
 {
-
+	stock->opt[1] = 0;
+	ap = NULL;
 }
