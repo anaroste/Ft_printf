@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/02/11 11:02:14 by anaroste         ###   ########.fr        #
+#    Updated: 2018/02/15 14:24:33 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,28 +16,24 @@ NAME = libftprintf
 
 FLAGS = -Wall -Werror -Wextra
 
-PRINTF_SRC_NAME = ft_add_lenght.c	\
-				ft_add_precision.c	\
-				ft_add_sign.c		\
-				ft_add_space.c		\
-				ft_add_x.c			\
-				ft_add_zero.c		\
-				ft_convert_c.c		\
-				ft_convert_di.c		\
-				ft_convert_md.c		\
-				ft_convert_ms.c		\
-				ft_convert_mc.c		\
-				ft_convert_mu.c		\
-				ft_convert_o.c		\
-				ft_convert_oux.c	\
-				ft_convert_p.c		\
-				ft_convert_s.c		\
-				ft_convert_u.c		\
-				ft_convert_x.c		\
-				ft_cut_precision.c	\
-				ft_handler.c		\
-				ft_init_struct.c	\
-				ft_printf.c			\
+PRINTF_SRC_NAME = ft_add_nchar_after.c	\
+				ft_add_nchar_before.c	\
+				ft_add_nchar_afone.c	\
+				ft_printf.c				\
+				ft_init_struct.c		\
+				ft_handler.c			\
+				ft_convert_di.c			\
+#				ft_convert_c.c			\
+				ft_convert_md.c			\
+				ft_convert_ms.c			\
+				ft_convert_mc.c			\
+				ft_convert_mu.c			\
+				ft_convert_o.c			\
+				ft_convert_oux.c		\
+				ft_convert_p.c			\
+				ft_convert_s.c			\
+				ft_convert_u.c			\
+				ft_convert_x.c			\
 
 LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_itoa.c				\

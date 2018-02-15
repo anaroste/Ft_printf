@@ -1,32 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_precision.c                                 :+:      :+:    :+:   */
+/*   ft_add_nchar_after.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/22 16:54:22 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:38:30 by anaroste         ###   ########.fr       */
+/*   Created: 2018/02/14 13:46:13 by anaroste          #+#    #+#             */
+/*   Updated: 2018/02/15 09:10:21 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 
-void	ft_add_precision(t_stock *stock)
+void	ft_add_nchar_after(t_stock *stock, int	 nb, char c)
 {
-	int		count;
 	char	*str;
+	char	*tmp;
 	int		i;
 
 	i = 0;
-	count = stock->opt[6] - ft_strlen(stock->str);
-	str = (char *)malloc(sizeof(char) * (count + 1));
-	while (count--)
+	tmp = (char *)malloc(sizeof(char) * ft_strlen(stock->str));
+	str = (char *)malloc(sizeof(char) * nb);
+	while (stock->str[i])
 	{
-		str[i] = '0';
+		tmp[i] = stock->str[i];
 		i++;
 	}
-	str[i] = '\0';
-	stock->str = ft_strcat(str, stock->str);
+	i = 0;
+	while (nb--)
+		str[i++] = c;
+	stock->str = ft_strcat(tmp, str);
 	free(str);
+	free(tmp);
 }
+/*
+int		main()
+{
+	t_stock		stock;
+
+	stock.str = "42";
+	ft_add_nchar_after(&stock, 3, '0');
+	printf("%s\n", stock.str);
+	return 0;
+}
+*/

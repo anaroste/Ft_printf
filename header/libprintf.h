@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 17:10:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:26:22 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/15 14:29:39 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void					ft_handler_modifier1(char *format, t_stock *stock,
 void					ft_handler_modifier2(char *format, t_stock *stock,
 							int *i);
 
-void					ft_convert_mod(t_stock *stock, va_list ap);
 void					ft_convert_di(t_stock *stock, va_list ap);
 void					ft_convert_o(t_stock *stock);
 void					ft_convert_u(t_stock *stock);
@@ -67,12 +66,8 @@ void					ft_convert_ms(t_stock *stock, va_list ap);
 void					ft_convert_mc(t_stock *stock, va_list ap);
 void					ft_convert_p(t_stock *stock, va_list ap);
 
-void					ft_add_precision(t_stock *stock);
-void					ft_add_sign(t_stock *stock);
-void					ft_add_space(t_stock *stock);
-void					ft_add_lenght(t_stock *stock);
-void					ft_add_zero(t_stock *stock);
-void					ft_add_x(t_stock *stock);
-void					ft_cut_precision(t_stock *stock);
+void					ft_add_nchar_before(t_stock *stock, int nb, char c);
+void					ft_add_nchar_after(t_stock *stock, int nb, char c);
+void					ft_add_nchar_afone(t_stock *stock, int nb, char c);
 
 #endif

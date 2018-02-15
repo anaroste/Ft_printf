@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 10:16:38 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:47:01 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/15 15:52:30 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	ft_handler_flag(char *format, t_stock *stock, int *i)
 			stock->opt[3] = 1;
 		if (format[*i] == ' ')
 			stock->opt[4] = 1;
-		if (stock->opt[4] == 1)
-			stock->opt[3] = 0;
 		*i = *i + 1;
 	}
 }
@@ -71,6 +69,8 @@ void	ft_handler_accurancy(char *format, t_stock *stock, int *i)
 				*i = *i + 1;
 			}
 		}
+		if (stock->opt[6] == 0)
+			stock->opt[6] = -1;
 	}
 }
 
