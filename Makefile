@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/02/15 14:24:33 by anaroste         ###   ########.fr        #
+#    Updated: 2018/02/17 12:53:56 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,21 +19,23 @@ FLAGS = -Wall -Werror -Wextra
 PRINTF_SRC_NAME = ft_add_nchar_after.c	\
 				ft_add_nchar_before.c	\
 				ft_add_nchar_afone.c	\
+				ft_add_nchar_custom.c	\
 				ft_printf.c				\
 				ft_init_struct.c		\
 				ft_handler.c			\
 				ft_convert_di.c			\
-#				ft_convert_c.c			\
-				ft_convert_md.c			\
-				ft_convert_ms.c			\
-				ft_convert_mc.c			\
-				ft_convert_mu.c			\
+				ft_convert_ouxmx.c		\
 				ft_convert_o.c			\
-				ft_convert_oux.c		\
-				ft_convert_p.c			\
-				ft_convert_s.c			\
 				ft_convert_u.c			\
 				ft_convert_x.c			\
+				ft_convert_mx.c			\
+				ft_convert_md.c			\
+				ft_convert_momu.c		\
+#				ft_convert_c.c			\
+				ft_convert_ms.c			\
+				ft_convert_mc.c			\
+				ft_convert_p.c			\
+				ft_convert_s.c			\
 
 LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_itoa.c				\

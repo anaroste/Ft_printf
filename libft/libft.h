@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 16:38:57 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 16:43:00 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/16 16:44:43 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ char		*ft_strdup(const char *s1);
 char		*ft_strncpy(char *dst, const char *src, size_t len);
 char		*ft_itoa(int n);
 char		*ft_llong_itoa(long long n);
-char		*ft_ullong_itoa(unsigned long long nbr, int base);
+char		*ft_ullong_itoa_base(unsigned long long nbr, int base);
 char		*ft_custom_itoa_base(unsigned long long nbr, int base, char c);
 size_t		ft_strlen(const char *s);
 size_t		ft_strlen_c(const char *s, char c);

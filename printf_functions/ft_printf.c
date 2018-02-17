@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/15 12:49:12 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/17 12:53:17 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ static void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
 {
 	(*ft_set_up)[0] = &ft_convert_di;
 	(*ft_set_up)[1] = &ft_convert_di;
-//	(*ft_set_up)[2] = &ft_convert_oux;
-//	(*ft_set_up)[3] = &ft_convert_oux;
-//	(*ft_set_up)[4] = &ft_convert_oux;
-//	(*ft_set_up)[5] = &ft_convert_oux;
-//	(*ft_set_up)[6] = &ft_convert_md;
-//	(*ft_set_up)[7] = &ft_convert_mo;
-//	(*ft_set_up)[8] = &ft_convert_mu;
+	(*ft_set_up)[2] = &ft_convert_ouxmx;
+	(*ft_set_up)[3] = &ft_convert_ouxmx;
+	(*ft_set_up)[4] = &ft_convert_ouxmx;
+	(*ft_set_up)[5] = &ft_convert_ouxmx;
+	(*ft_set_up)[6] = &ft_convert_md;
+	(*ft_set_up)[7] = &ft_convert_momu;
+	(*ft_set_up)[8] = &ft_convert_momu;
 //	(*ft_set_up)[9] = &ft_convert_c;
 //	(*ft_set_up)[10] = &ft_convert_s;
 //	(*ft_set_up)[11] = &ft_convert_mc;
@@ -124,7 +124,7 @@ int			ft_printf(const char *format, ...)
 
 	i = 0;
 	va_start(ap, format);
-	ft_printf_second((char*)format, ap, &i);
+	ft_printf_second((char *)format, ap, &i);
 	va_end(ap);
 	return (g_ret);
 }

@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 09:46:41 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:30:35 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/17 09:59:25 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ char			*ft_ullong_itoa_base(unsigned long long nbr, int base)
 		str[--count] = tab[(nbr % base)];
 		nbr /= base;
 	}
+//	free (tab);
 	return (str);
 }
 /*

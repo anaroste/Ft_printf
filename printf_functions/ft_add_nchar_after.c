@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 13:46:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/15 09:10:21 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/17 08:53:26 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,21 @@ void	ft_add_nchar_after(t_stock *stock, int	 nb, char c)
 	int		i;
 
 	i = 0;
-	tmp = (char *)malloc(sizeof(char) * ft_strlen(stock->str));
-	str = (char *)malloc(sizeof(char) * nb);
+	tmp = (char *)malloc(sizeof(char) * (ft_strlen(stock->str) + 1));
+	str = (char *)malloc(sizeof(char) * (nb + 1));
 	while (stock->str[i])
 	{
 		tmp[i] = stock->str[i];
 		i++;
 	}
+	tmp[i] = '\0';
 	i = 0;
 	while (nb--)
 		str[i++] = c;
+	str[i] = '\0';
 	stock->str = ft_strcat(tmp, str);
-	free(str);
-	free(tmp);
+//	free(str);
+//	free(tmp);
 }
 /*
 int		main()

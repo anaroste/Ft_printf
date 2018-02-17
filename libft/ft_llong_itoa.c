@@ -6,11 +6,12 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 10:41:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/01/25 17:27:59 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/16 13:28:30 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <limits.h>
 
 static int		ft_count(long long n)
 {
@@ -29,11 +30,11 @@ static char		*ft_excep(long long n)
 {
 	char	*str;
 
-	if (n == -9223372036854775807)
+	if (n == LONG_MIN)
 	{
 		if ((str = (char *)malloc(sizeof(*str) * 21)) == NULL)
 			return (NULL);
-		return (ft_strdup("-9223372036854775807"));
+		return (ft_strdup("-9223372036854775808"));
 	}
 	else
 	{
@@ -50,7 +51,7 @@ char			*ft_llong_itoa(long long n)
 	int			neg;
 
 	neg = 0;
-	if ((n == -9223372036854775807) || (n == 0))
+	if ((n == LONG_MIN) || (n == 0))
 		return (ft_excep(n));
 	neg = (n < 0) ? 1 : 0;
 	n = (n < 0) ? -n : n;
