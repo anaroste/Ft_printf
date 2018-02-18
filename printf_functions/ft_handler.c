@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/12 10:16:38 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/15 15:52:30 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/18 12:16:01 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ void	ft_handler_flag(char *format, t_stock *stock, int *i)
 			stock->opt[0] = 1;
 		if (format[*i] == '0')
 		{
-			if (stock->opt[2] == 0)
+			if (stock->opt[2] == -1)
 				stock->opt[1] = 1;
 		}
 		if (format[*i] == '-')
 		{
 			stock->opt[2] = 1;
-			stock->opt[1] = 0;
+			stock->opt[1] = -1;
 		}
 		if (format[*i] == '+')
 			stock->opt[3] = 1;
@@ -40,6 +40,8 @@ void	ft_handler_flag(char *format, t_stock *stock, int *i)
 
 void	ft_handler_lenght(char *format, t_stock *stock, int *i)
 {
+	if (format[*i] >= '0' && format[*i] <= '9')
+		stock->opt[5] = 0;
 	while (format[*i] >= '0' && format[*i] <= '9')
 	{
 		stock->opt[5] *= 10;
@@ -53,6 +55,7 @@ void	ft_handler_accurancy(char *format, t_stock *stock, int *i)
 	if (format[*i] == '.')
 	{
 		*i = *i + 1;
+		stock->opt[6] = 0;
 		if (format[*i] == '-')
 		{
 			*i = *i + 1;
@@ -69,8 +72,6 @@ void	ft_handler_accurancy(char *format, t_stock *stock, int *i)
 				*i = *i + 1;
 			}
 		}
-		if (stock->opt[6] == 0)
-			stock->opt[6] = -1;
 	}
 }
 

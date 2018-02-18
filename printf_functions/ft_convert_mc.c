@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_struct.c                                   :+:      :+:    :+:   */
+/*   ft_convert_mc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/12 14:53:39 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/18 12:16:18 by anaroste         ###   ########.fr       */
+/*   Created: 2018/02/17 13:10:22 by anaroste          #+#    #+#             */
+/*   Updated: 2018/02/17 13:24:59 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 
-t_stock		ft_init_struct(void)
+void		ft_convert_mc(t_stock *stock, va_list ap)
 {
-	int			i;
-	t_stock		stock;
-
-	i = -1;
-	stock.ull = 0;
-	stock.str = NULL;
-	stock.type = 0;
-	while (++i < 9)
-		stock.opt[i++] = -1;
-	return (stock);
+	stock->opt[0] = 0;
+	ap = NULL;
 }

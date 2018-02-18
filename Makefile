@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/02/17 12:53:56 by anaroste         ###   ########.fr        #
+#    Updated: 2018/02/18 10:25:42 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,12 +30,13 @@ PRINTF_SRC_NAME = ft_add_nchar_after.c	\
 				ft_convert_x.c			\
 				ft_convert_mx.c			\
 				ft_convert_md.c			\
-				ft_convert_momu.c		\
-#				ft_convert_c.c			\
-				ft_convert_ms.c			\
-				ft_convert_mc.c			\
-				ft_convert_p.c			\
+				ft_convert_momumod.c	\
+				ft_convert_c.c			\
 				ft_convert_s.c			\
+				ft_convert_mc.c			\
+				ft_convert_ms.c			\
+				ft_convert_mod.c		\
+#				ft_convert_p.c			\
 
 LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_itoa.c				\

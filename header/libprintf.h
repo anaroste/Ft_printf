@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 17:10:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/17 12:53:14 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/18 10:24:16 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,13 @@ void					ft_convert_x(t_stock *stock);
 void					ft_convert_mx(t_stock *stock);
 void					ft_convert_ouxmx(t_stock *stock, va_list ap);
 void					ft_convert_md(t_stock *stock, va_list ap);
-void					ft_convert_momu(t_stock *stock, va_list ap);
+void					ft_convert_momumod(t_stock *stock, va_list ap);
 void					ft_convert_s(t_stock *stock, va_list ap);
 void					ft_convert_c(t_stock *stock, va_list ap);
 void					ft_convert_ms(t_stock *stock, va_list ap);
 void					ft_convert_mc(t_stock *stock, va_list ap);
 void					ft_convert_p(t_stock *stock, va_list ap);
+void					ft_convert_mod(t_stock *stock);
 
 void					ft_add_nchar_before(t_stock *stock, int nb, char c);
 void					ft_add_nchar_after(t_stock *stock, int nb, char c);

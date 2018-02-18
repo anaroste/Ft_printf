@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 12:18:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/16 13:14:26 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/18 13:17:58 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@ static void		ft_di_zero(t_stock *stock)
 	int		i;
 
 	i = 0;
+	if (stock->opt[3] == 1)
+		ft_add_nchar_before(stock, 1, '+');
+	else if (stock->opt[4] == 1)
+		ft_add_nchar_before(stock, 1, ' ');
 	while (i < stock->opt[5])
-		stock->str[i++] = ' ';
+	{
+		if (stock->opt[1] != 1)
+			stock->str[i++] = ' ';
+		else
+			stock->str[i++] = '0';
+	}
 }
 
 static void		ft_convert_di_neg(t_stock *stock)
@@ -28,7 +37,7 @@ static void		ft_convert_di_neg(t_stock *stock)
 				((int)ft_strlen(stock->str)- 1), '0');
 	if (stock->opt[5] > (int)ft_strlen(stock->str))
 	{
-		if ((stock->opt[6] <= 0 && stock->opt[2] == 0) && stock->opt[1] == 1)
+		if ((stock->opt[6] <= 0 && stock->opt[2] == -1) && stock->opt[1] == 1)
 		{
 			if (stock->opt[3] == 0 && stock->opt[4] == 0)
 				ft_add_nchar_afone(stock, stock->opt[5] -
@@ -37,7 +46,7 @@ static void		ft_convert_di_neg(t_stock *stock)
 				ft_add_nchar_afone(stock, stock->opt[5] -
 						(int)ft_strlen(stock->str), '0');
 		}
-		else if (stock->opt[2] != 0)
+		else if (stock->opt[2] == 1)
 			ft_add_nchar_after(stock, stock->opt[5] -
 					(int)ft_strlen(stock->str), ' ');
 		else
@@ -51,22 +60,22 @@ static void		ft_convert_di_second(t_stock *stock)
 	if (stock->opt[6] > (int)ft_strlen(stock->str))
 		ft_add_nchar_before(stock, stock->opt[6] - (int)ft_strlen(stock->str),
 				'0');
-	if (stock->opt[3] != 0)
+	if (stock->opt[3] == 1)
 		ft_add_nchar_before(stock, 1, '+');
-	else if (stock->opt[4] != 0)
+	else if (stock->opt[4] == 1)
 		ft_add_nchar_before(stock, 1, ' ');
 	if (stock->opt[5] > (int)ft_strlen(stock->str))
 	{
-		if ((stock->opt[6] <= 0 && stock->opt[2] == 0) && stock->opt[1] == 1)
+		if ((stock->opt[6] <= 0 && stock->opt[2] == -1) && stock->opt[1] == 1)
 		{
-			if (stock->opt[3] == 0 && stock->opt[4] == 0)
+			if (stock->opt[3] == -1 && stock->opt[4] == -1)
 				ft_add_nchar_before(stock, stock->opt[5] -
 						(int)ft_strlen(stock->str), '0');
 			else
 				ft_add_nchar_afone(stock, stock->opt[5] -
 						(int)ft_strlen(stock->str), '0');
 		}
-		else if (stock->opt[2] != 0)
+		else if (stock->opt[2] == 1)
 			ft_add_nchar_after(stock, stock->opt[5] -
 					(int)ft_strlen(stock->str), ' ');
 		else
