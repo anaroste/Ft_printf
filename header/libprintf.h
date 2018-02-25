@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 17:10:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/18 10:24:16 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/24 10:55:49 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct			s_stock
 **					PROTOTYPES
 */
 
-t_stock					ft_init_struct(void);
+void					ft_init_struct(t_stock *stock);
 int						ft_printf(const char *format, ...);
 
 void					ft_handler_flag(char *format, t_stock *stock, int *i);

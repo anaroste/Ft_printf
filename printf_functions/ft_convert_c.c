@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/17 13:10:22 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/18 14:01:04 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/24 20:17:41 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,11 @@ void		ft_convert_c(t_stock *stock, va_list ap)
 	stock->str = (char *)malloc(sizeof(char) * (stock->opt[5] + 2));
 	stock->str[0] = va_arg(ap, int);
 	stock->str[1] = '\0';
+	if (stock->str[0] == '\0')
+	{
+		stock->opt[5]--;
+		stock->opt[8]++;
+	}
 	if (stock->opt[5] > 1)
 	{
 		if (stock->opt[2] == 1)

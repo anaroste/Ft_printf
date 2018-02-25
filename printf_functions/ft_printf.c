@@ -6,14 +6,14 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/18 13:57:35 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/24 20:18:24 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 #include "../header/global.h"
 
-static int		ft_countflag(char	*str)
+static int		ft_countflag(char *str)
 {
 	int		i;
 
@@ -41,7 +41,7 @@ static void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
 	(*ft_set_up)[10] = &ft_convert_s;
 	(*ft_set_up)[11] = &ft_convert_mc;
 	(*ft_set_up)[12] = &ft_convert_ms;
-//	(*ft_set_up)[13] = &ft_convert_p;
+	(*ft_set_up)[13] = &ft_convert_p;
 	(*ft_set_up)[14] = &ft_convert_momumod;
 }
 
@@ -52,11 +52,11 @@ static void		ft_handler_arg(char *format, va_list ap, int *i)
 	int			j;
 	void		(*ft_set_up[15])(t_stock*, va_list);
 
-	*i = *i + 1;
+	*i = 1;
 	j = 0;
 	str = "diouxXDOUcsCSp%";
+	ft_init_struct(&stock);
 	ft_ptr_function(&ft_set_up);
-	stock = ft_init_struct();
 	ft_handler_flag(format, &stock, i);
 	ft_handler_lenght(format, &stock, i);
 	ft_handler_accurancy(format, &stock, i);
@@ -77,8 +77,8 @@ printf("t = %c\n", stock.type);*/
 	ft_set_up[j](&stock, ap);
 	g_ret += (int)ft_strlen(stock.str);
 	ft_putstr(stock.str);
-	if (stock.type == 'c' && stock.str[0] == '\0')
-		g_ret += 1;
+//	if (stock.type == 'c' && stock.str[0] == '\0')
+		g_ret += stock.opt[8];
 }
 
 static void		ft_printf_second(char *format, va_list ap, int *i)

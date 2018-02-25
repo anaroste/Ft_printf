@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 17:05:29 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/17 11:52:04 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/24 12:20:18 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void		ft_convert_ouxmx(t_stock *stock, va_list ap)
 {
-	if (stock->opt[7] == 0)
+	if (stock->opt[7] == -1)
 		stock->ull = (unsigned long long)(va_arg(ap, unsigned int));
 	if (stock->opt[7] == 1)
 		stock->ull = (unsigned long long)(unsigned char)va_arg(ap, int);
