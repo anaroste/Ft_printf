@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/23 09:46:41 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/17 09:59:25 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/25 14:38:16 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,13 @@ char			*ft_ullong_itoa_base(unsigned long long nbr, int base)
 	int		count;
 	char	*str;
 	char	*tab;
+	char	*tmp[2];
 
+	str = NULL;
+	tab = NULL;
 	count = ft_count(nbr, base);
+	tmp[0] = tab;
+	tmp[1] = str;
 	tab = (char *)malloc(sizeof(char) * 17);
 	tab = "0123456789ABCDEF";
 	str = (char *)malloc(sizeof(char) * (count + 1));
@@ -41,13 +46,7 @@ char			*ft_ullong_itoa_base(unsigned long long nbr, int base)
 		str[--count] = tab[(nbr % base)];
 		nbr /= base;
 	}
-//	free (tab);
+	ft_strdel(&tmp[0]);
+	ft_strdel(&tmp[1]);
 	return (str);
 }
-/*
-int		main()
-{
-	printf("%s\n", ft_ullong_itoa_base(1234567890, 8));
-	return 0;
-}
-*/

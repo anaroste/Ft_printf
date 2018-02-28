@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/02/18 10:25:42 by anaroste         ###   ########.fr        #
+#    Updated: 2018/02/28 10:37:32 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,9 @@ PRINTF_SRC_NAME = ft_add_nchar_after.c	\
 				ft_convert_mc.c			\
 				ft_convert_ms.c			\
 				ft_convert_mod.c		\
-#				ft_convert_p.c			\
+				ft_convert_p.c			\
+				ft_wchar_functions.c	\
+				ft_printnchar.c			\
 
 LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_itoa.c				\
@@ -52,6 +54,7 @@ LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_strlen_c.c			\
 				ft_strncpy.c			\
 				ft_ullong_itoa_base.c	\
+				ft_strdel.c				\
 
 PRINTF_SRC = $(addprefix printf_functions/, $(PRINTF_SRC_NAME))
 LIBFT_SRC = $(addprefix libft/, $(LIBFT_SRC_NAME))

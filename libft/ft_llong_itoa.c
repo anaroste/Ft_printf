@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/22 10:41:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/16 13:28:30 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/25 13:00:13 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,12 @@ static int		ft_count(long long n)
 
 static char		*ft_excep(long long n)
 {
-	char	*str;
-
 	if (n == LONG_MIN)
 	{
-		if ((str = (char *)malloc(sizeof(*str) * 21)) == NULL)
-			return (NULL);
 		return (ft_strdup("-9223372036854775808"));
 	}
 	else
 	{
-		if ((str = (char *)malloc(sizeof(*str) * 2)) == NULL)
-			return (NULL);
 		return (ft_strdup("0"));
 	}
 }

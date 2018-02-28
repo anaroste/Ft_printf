@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 16:38:57 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/16 16:44:43 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/25 11:51:58 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 
+void		ft_strdel(char **as);
 void		ft_putchar(const char c);
 void		ft_putnbr(int n);
 void		ft_putstr(char const *s);

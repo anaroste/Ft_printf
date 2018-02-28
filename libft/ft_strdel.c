@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_len.c                                    :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/01/11 11:26:30 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/25 10:48:16 by anaroste         ###   ########.fr       */
+/*   Created: 2017/11/12 12:19:27 by anaroste          #+#    #+#             */
+/*   Updated: 2017/11/14 16:38:44 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr_len(const char *str, int len)
+void	ft_strdel(char **as)
 {
-	write(1, str, len);
+	if (as != NULL)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

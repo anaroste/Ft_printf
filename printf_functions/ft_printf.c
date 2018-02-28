@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/24 20:18:24 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/02/28 17:16:54 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static void		ft_handler_arg(char *format, va_list ap, int *i)
 	ft_handler_modifier1(format, &stock, i);
 	ft_handler_modifier2(format, &stock, i);
 	stock.type = format[*i];
+	if (stock.type == 'c' && stock.opt[7] == 3)
+		stock.type = 'C';
 /*printf("# = %d\n", stock.opt[0]);
 printf("0 = %d\n", stock.opt[1]);
 printf("- = %d\n", stock.opt[2]);
@@ -76,9 +78,11 @@ printf("t = %c\n", stock.type);*/
 		j++;
 	ft_set_up[j](&stock, ap);
 	g_ret += (int)ft_strlen(stock.str);
-	ft_putstr(stock.str);
-//	if (stock.type == 'c' && stock.str[0] == '\0')
-		g_ret += stock.opt[8];
+	if ((stock.type != 'C') || (stock.opt[7] != -2))
+		ft_putstr(stock.str);
+	g_ret += stock.opt[8];
+	if (stock.type == 'd')
+		ft_strdel(&stock.str);
 }
 
 static void		ft_printf_second(char *format, va_list ap, int *i)
