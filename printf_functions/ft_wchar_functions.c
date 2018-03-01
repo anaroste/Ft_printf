@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/26 15:40:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/28 10:27:53 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/01 08:50:18 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ int			ft_wc_convert(char *s, wchar_t wchar)
 		return (ft_conv_utf8(4, wchar, s));
 	return (-1);
 }
-/*
+
 int			ft_wcs_convert(char *s, wchar_t *pwcs, int n)
 {
 	char	tmp[sizeof(wchar_t)];
@@ -111,4 +111,4 @@ int			ft_wcs_convert(char *s, wchar_t *pwcs, int n)
 	if (n > 0)
 		s[offset] = '\0';
 	return (offset);
-}*/
+}

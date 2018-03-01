@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/28 17:16:54 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/01 15:16:33 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ printf("t = %c\n", stock.type);*/
 	while (stock.type != str[j])
 		j++;
 	ft_set_up[j](&stock, ap);
-	g_ret += (int)ft_strlen(stock.str);
-	if ((stock.type != 'C') || (stock.opt[7] != -2))
+	if (stock.type != 'S' && stock.type != 'Y')
+		g_ret += (int)ft_strlen(stock.str);
+	if ((stock.type != 'C') && (stock.opt[7] != -2))
 		ft_putstr(stock.str);
 	g_ret += stock.opt[8];
 	if (stock.type == 'd')

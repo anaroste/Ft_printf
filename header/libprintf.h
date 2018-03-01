@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/25 17:10:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/24 10:55:49 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/01 08:31:32 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <wchar.h>
 # include "../libft/libft.h"
 
 /*
@@ -71,5 +72,11 @@ void					ft_add_nchar_before(t_stock *stock, int nb, char c);
 void					ft_add_nchar_after(t_stock *stock, int nb, char c);
 void					ft_add_nchar_afone(t_stock *stock, int nb, char c);
 void					ft_add_nchar_custom(t_stock *stock, int nb, char c);
+int						ft_printnchar(int nb, char c);
+
+size_t					ft_wcslen(wchar_t *str);
+size_t					ft_strlenwcs(wchar_t *wcs);
+int						ft_wc_convert(char *s, wchar_t wchar);
+int						ft_wcs_convert(char *s, wchar_t *pwcs, int n);
 
 #endif

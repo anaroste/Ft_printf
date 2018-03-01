@@ -6,7 +6,7 @@
 #    By: tbleuse <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by tbleuse           #+#    #+#              #
-#    Updated: 2018/02/28 10:37:32 by anaroste         ###   ########.fr        #
+#    Updated: 2018/03/01 09:09:57 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_strncpy.c			\
 				ft_ullong_itoa_base.c	\
 				ft_strdel.c				\
+				ft_memcpy.c				\
 
 PRINTF_SRC = $(addprefix printf_functions/, $(PRINTF_SRC_NAME))
 LIBFT_SRC = $(addprefix libft/, $(LIBFT_SRC_NAME))
