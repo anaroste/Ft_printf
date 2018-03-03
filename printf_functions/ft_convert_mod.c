@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/18 09:52:28 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/18 14:20:28 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/02 11:43:52 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,11 @@ void		ft_convert_mod(t_stock *stock)
 			else
 				ft_add_nchar_after(stock, stock->opt[5] - 1, '0');
 		}
+	}
+	if (stock->str[0] == '%' && stock->str[1] == '\0')
+	{
+		stock->str = malloc(2);
+		stock->str[0] = '%';
+		stock->str[1] = '\0';
 	}
 }

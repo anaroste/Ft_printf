@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/16 14:08:51 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/25 10:28:29 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/02 11:08:24 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	ft_convert_mx(t_stock *stock)
 	{
 		stock->opt[0] = -1;
 		if (stock->opt[6] == 0)
-			stock->str = "";
+		{
+			if (!(stock->str = (char *)malloc(sizeof(char) * 1)))
+				exit(EXIT_FAILURE);
+			stock->str[0] = '\0';
+		}
 		else
 		{
 			stock->str = malloc(2);

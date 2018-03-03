@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/16 14:08:51 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/24 12:08:30 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/02 10:29:34 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,13 @@
 
 void	ft_convert_u(t_stock *stock)
 {
-//	char	*tmp;
-
-//	tmp = stock->str;
 	if (stock->ull == 0)
 	{
 		if (stock->opt[6] == 0)
 		{
-			stock->str = "";
+			if (!(stock->str = (char *)malloc(sizeof(char) * 1)))
+				exit(EXIT_FAILURE);
+			stock->str[0] = '\0';
 		}
 		else
 		{
@@ -32,7 +31,6 @@ void	ft_convert_u(t_stock *stock)
 	}
 	else
 		stock->str = ft_ullong_itoa_base(stock->ull, 10);
-//	free (tmp);
 	if (stock->opt[6] > (int)ft_strlen(stock->str))
 		ft_add_nchar_before(stock, stock->opt[6] - (int)ft_strlen(stock->str),
 				'0');
@@ -48,5 +46,4 @@ void	ft_convert_u(t_stock *stock)
 			ft_add_nchar_before(stock, stock->opt[5] -
 					(int)ft_strlen(stock->str), ' ');
 	}
-	
 }

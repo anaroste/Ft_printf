@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 12:18:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/24 19:10:26 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/02 15:43:49 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ static void		ft_di_zerop(t_stock *stock)
 	int		i;
 
 	i = 0;
+	stock->str = (char *)malloc(sizeof(char) * 1);
+	stock->str[0] = '\0';
 	if (stock->opt[3] == 1)
 		ft_add_nchar_before(stock, 1, '+');
 	else if (stock->opt[4] == 1)
@@ -122,10 +124,7 @@ void			ft_convert_di(t_stock *stock, va_list ap)
 	if (stock->str[0] == '0' && stock->opt[6] == -1)
 		ft_di_zero(stock);
 	else if (stock->str[0] == '0' && stock->opt[6] == 0)
-	{
-		stock->str = "";
 		ft_di_zerop(stock);
-	}
 	else if (stock->str[0] == '-')
 		ft_convert_di_neg(stock);
 	else

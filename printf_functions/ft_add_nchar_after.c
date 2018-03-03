@@ -6,13 +6,13 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 13:46:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/17 08:53:26 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/03 17:02:35 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 
-void	ft_add_nchar_after(t_stock *stock, int	 nb, char c)
+void			ft_add_nchar_after(t_stock *stock, int	 nb, char c)
 {
 	char	*str;
 	char	*tmp;
