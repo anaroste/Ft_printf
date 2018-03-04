@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 12:35:51 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/17 08:56:10 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/04 14:15:56 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,5 @@ void	ft_add_nchar_before(t_stock *stock, int nb, char c)
 	while (len--)
 		stock->str[i++] = tmp[nb++];
 	stock->str[i] = '\0';
-//	free(tmp);
+	ft_strdel(&tmp);
 }
-/*
-   int		main()
-   {
-   t_stock		stock;
-
-   stock.str = "42";
-   ft_add_nchar_before(&stock, 3, '9');
-   printf("%s\n", stock.str);
-   return 0;
-   }
-   */

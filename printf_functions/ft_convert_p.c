@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/19 16:43:38 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/19 19:20:29 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/04 14:42:12 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ void			ft_convert_p(t_stock *stock, va_list ap)
 {
 	stock->str =
 		ft_custom_itoa_base((unsigned long long)va_arg(ap, void*), 16, 'x');
-	if (stock->str[0]== '\0')
-		stock->str = "0";
+	if (stock->str[0] == '\0')
+		ft_add_nchar_before(stock, 1, '0');
 	ft_add_nchar_before(stock, 1, 'x');
 	ft_add_nchar_before(stock, 1, '0');
 	if (stock->opt[5] > (int)ft_strlen(stock->str))

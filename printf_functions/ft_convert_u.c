@@ -6,29 +6,33 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/16 14:08:51 by anaroste          #+#    #+#             */
-/*   Updated: 2018/03/02 10:29:34 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/04 16:50:46 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 
-void	ft_convert_u(t_stock *stock)
+static void		ft_convert_u_second(t_stock *stock)
+{
+	if (stock->opt[6] == 0)
+	{
+		if (!(stock->str = (char *)malloc(sizeof(char) * 1)))
+			exit(EXIT_FAILURE);
+		stock->str[0] = '\0';
+	}
+	else
+	{
+		if (!(stock->str = malloc(2)))
+			exit(EXIT_FAILURE);
+		stock->str[0] = '0';
+		stock->str[1] = '\0';
+	}
+}
+
+void			ft_convert_u(t_stock *stock)
 {
 	if (stock->ull == 0)
-	{
-		if (stock->opt[6] == 0)
-		{
-			if (!(stock->str = (char *)malloc(sizeof(char) * 1)))
-				exit(EXIT_FAILURE);
-			stock->str[0] = '\0';
-		}
-		else
-		{
-			stock->str = malloc(2);
-			stock->str[0] = '0';
-			stock->str[1] = '\0';
-		}
-	}
+		ft_convert_u_second(stock);
 	else
 		stock->str = ft_ullong_itoa_base(stock->ull, 10);
 	if (stock->opt[6] > (int)ft_strlen(stock->str))

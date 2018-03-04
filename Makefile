@@ -6,7 +6,7 @@
 #    By: anaroste <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/11/08 10:34:52 by anaroste          #+#    #+#              #
-#    Updated: 2018/03/03 17:02:07 by anaroste         ###   ########.fr        #
+#    Updated: 2018/03/04 17:33:14 by anaroste         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ PRINTF_SRC_NAME = ft_add_nchar_after.c	\
 				ft_convert_p.c			\
 				ft_wchar_functions.c	\
 				ft_printnchar.c			\
+				ft_countflag.c			\
 
 LIBFT_SRC_NAME = ft_custom_itoa_base.c	\
 				ft_itoa.c				\

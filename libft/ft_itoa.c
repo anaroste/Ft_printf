@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/10 14:00:59 by anaroste          #+#    #+#             */
-/*   Updated: 2018/02/25 13:02:16 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/03 17:26:21 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ static int		ft_count(int n)
 
 static char		*ft_excep(int n)
 {
-
 	if (n == -2147483648)
 	{
 		return (ft_strdup("-2147483648"));

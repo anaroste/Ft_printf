@@ -6,7 +6,7 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/14 12:18:16 by anaroste          #+#    #+#             */
-/*   Updated: 2018/03/02 15:43:49 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/04 16:42:48 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ static void		ft_convert_di_neg(t_stock *stock)
 {
 	if (stock->opt[6] > (int)ft_strlen(stock->str) - 1)
 		ft_add_nchar_custom(stock, stock->opt[6] -
-				((int)ft_strlen(stock->str)- 1), '0');
+				((int)ft_strlen(stock->str) - 1), '0');
 	if (stock->opt[5] > (int)ft_strlen(stock->str))
 	{
 		if ((stock->opt[6] <= 0 && stock->opt[2] == -1) && stock->opt[1] == 1)
 		{
 			if (stock->opt[3] == 0 && stock->opt[4] == 0)
-				ft_add_nchar_afone(stock, stock->opt[5] -
+				ft_add_nchar_custom(stock, stock->opt[5] -
 						(int)ft_strlen(stock->str), '0');
 			else
-				ft_add_nchar_afone(stock, stock->opt[5] -
+				ft_add_nchar_custom(stock, stock->opt[5] -
 						(int)ft_strlen(stock->str), '0');
 		}
 		else if (stock->opt[2] == 1)

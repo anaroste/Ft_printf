@@ -1,38 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_nchar_custom.c                              :+:      :+:    :+:   */
+/*   ft_countflag.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/14 12:35:51 by anaroste          #+#    #+#             */
-/*   Updated: 2018/03/04 15:36:42 by anaroste         ###   ########.fr       */
+/*   Created: 2018/03/04 17:28:53 by anaroste          #+#    #+#             */
+/*   Updated: 2018/03/04 17:32:14 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 
-void	ft_add_nchar_custom(t_stock *stock, int nb, char c)
+int		ft_countflag(char *str)
 {
-	char	*tmp;
 	int		i;
-	int		len;
 
 	i = 1;
-	nb++;
-	len = ft_strlen(stock->str);
-	tmp = stock->str;
-	stock->str = (char *)malloc(sizeof(char) * (len + nb + 1));
-	stock->str[len + nb] = '\0';
-	stock->str[0] = tmp[0];
-	while (i < nb)
-		stock->str[i++] = c;
-	nb = 1;
-	while (len)
-	{
-		stock->str[i++] = tmp[nb++];
-		len--;
-	}
-	stock->str[i] = '\0';
-	ft_strdel(&tmp);
+	while ((str[i] != 'd' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u'
+			&& str[i] != 'x' && str[i] != 'X' && str[i] != 'O' && str[i] != 'U'
+			&& str[i] != 'D' && str[i] != 'c' && str[i] != 's' && str[i] != 'C'
+			&& str[i] != 'S' && str[i] != 'p' && str[i] != '%') && str[i])
+		i++;
+	return (i + 1);
 }

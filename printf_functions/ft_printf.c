@@ -6,27 +6,14 @@
 /*   By: anaroste <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 11:00:13 by anaroste          #+#    #+#             */
-/*   Updated: 2018/03/03 17:00:08 by anaroste         ###   ########.fr       */
+/*   Updated: 2018/03/04 17:55:45 by anaroste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/libprintf.h"
 #include "../header/global.h"
 
-static int		ft_countflag(char *str)
-{
-	int		i;
-
-	i = 1;
-	while ((str[i] != 'd' && str[i] != 'i' && str[i] != 'o' && str[i] != 'u'
-			&& str[i] != 'x' && str[i] != 'X' && str[i] != 'O' && str[i] != 'U'
-			&& str[i] != 'D' && str[i] != 'c' && str[i] != 's' && str[i] != 'C'
-			&& str[i] != 'S' && str[i] != 'p' && str[i] != '%' ) && str[i])
-		i++;
-	return (i + 1);
-}
-
-static void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
+static void		ft_ptr_function(void (*((*ft_set_up)[]))(t_stock*, va_list))
 {
 	(*ft_set_up)[0] = &ft_convert_di;
 	(*ft_set_up)[1] = &ft_convert_di;
@@ -45,44 +32,50 @@ static void		ft_ptr_function(void(*((*ft_set_up)[]))(t_stock*, va_list))
 	(*ft_set_up)[14] = &ft_convert_momumod;
 }
 
+static int		ft_handler_arg_second(t_stock *stock, int *i, va_list ap,
+		char *str)
+{
+	void		(*ft_set_up[15])(t_stock*, va_list);
+	int			j;
+
+	ft_ptr_function(&ft_set_up);
+	j = 0;
+	if (!ft_strchr(str, stock->type))
+	{
+		stock->str = "";
+		return (1);
+	}
+	if (stock->type == 'c' && stock->opt[7] == 3)
+		stock->type = 'C';
+	*i = *i + 1;
+	while (stock->type != str[j])
+		j++;
+	ft_set_up[j](stock, ap);
+	return (0);
+}
+
 static void		ft_handler_arg(char *format, va_list ap, int *i)
 {
 	t_stock		stock;
 	char		*str;
-	int			j;
-	void		(*ft_set_up[15])(t_stock*, va_list);
 
 	*i = 1;
-	j = 0;
 	str = "diouxXDOUcsCSp%";
 	ft_init_struct(&stock);
-	ft_ptr_function(&ft_set_up);
 	ft_handler_flag(format, &stock, i);
 	ft_handler_lenght(format, &stock, i);
 	ft_handler_accurancy(format, &stock, i);
 	ft_handler_modifier1(format, &stock, i);
 	ft_handler_modifier2(format, &stock, i);
 	stock.type = format[*i];
-	if (stock.type == 'c' && stock.opt[7] == 3)
-		stock.type = 'C';
-/*printf("# = %d\n", stock.opt[0]);
-printf("0 = %d\n", stock.opt[1]);
-printf("- = %d\n", stock.opt[2]);
-printf("+ = %d\n", stock.opt[3]);
-printf("  = %d\n", stock.opt[4]);
-printf("l = %d\n", stock.opt[5]);
-printf("p = %d\n", stock.opt[6]);
-printf("t = %c\n", stock.type);*/
-	*i = *i + 1;
-	while (stock.type != str[j])
-		j++;
-	ft_set_up[j](&stock, ap);
+	if (ft_handler_arg_second(&stock, i, ap, str) == 1)
+		return ;
 	if (stock.type != 'S' && stock.type != 'Y')
 		g_ret += (int)ft_strlen(stock.str);
 	if ((stock.type != 'C') && (stock.opt[7] != -2))
 	{
 		if (stock.type == 'c' && stock.opt[8] == 1)
-			write (1, stock.str, ft_strlen(stock.str) + 1);
+			write(1, stock.str, ft_strlen(stock.str) + 1);
 		else
 			ft_putstr(stock.str);
 	}
@@ -100,8 +93,7 @@ static void		ft_printf_second(char *format, va_list ap, int *i)
 		return ;
 	if (str == NULL)
 	{
-		write (1, format, ft_strlen(format));
-		g_ret += ft_strlen(format);
+		g_ret += write(1, format, ft_strlen(format));
 		return ;
 	}
 	else if (*format != '%')
@@ -120,7 +112,7 @@ static void		ft_printf_second(char *format, va_list ap, int *i)
 	}
 }
 
-int			ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	va_list		ap;
 	int			i;
